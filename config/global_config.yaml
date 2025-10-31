@@ -1,0 +1,146 @@
+# global_config.yaml
+
+threading_config:
+  inference_workers: 32
+  evaluation_workers: 48
+
+selected_tasks:
+  - task_path: "CODE_FIXING/1k"
+    args:
+      test_length: 1024   
+      sample_num: 200
+
+  - task_path: "CODE_FIXING/2k"
+    args:
+      test_length: 2048    
+      sample_num: 200
+
+  - task_path: "CODE_FIXING/4k"
+    args:
+      test_length: 4096     
+      sample_num: 200
+
+  - task_path: "CODE_FIXING/8k"
+    args:
+      test_length: 8192   
+      sample_num: 200
+
+  - task_path: "KG_TO_TEXT/1k"
+    args:
+      test_length: 1024    
+      sample_num: 200    
+
+  - task_path: "KG_TO_TEXT/2k"
+    args:
+      test_length: 2048   
+      sample_num: 200   
+
+  - task_path: "KG_TO_TEXT/4k"
+    args:
+      test_length: 4096   
+      sample_num: 200  
+
+  - task_path: "KG_TO_TEXT/8k"
+    args:
+      test_length: 8192   
+      sample_num: 200 
+
+  - task_path: "SALES_REPORT_GENERATION/1k"
+    args:
+      test_length: 1024
+      sample_num: 200
+
+  - task_path: "SALES_REPORT_GENERATION/2k" 
+    args:
+      test_length: 2048
+      sample_num: 200
+
+  - task_path: "SALES_REPORT_GENERATION/4k"
+    args:
+      test_length: 4096
+      sample_num: 200
+      
+  - task_path: "SALES_REPORT_GENERATION/8k" 
+    args:
+      test_length: 8192
+      sample_num: 200
+
+  - task_path: "AP_STYLE_WRITING/1k"
+    args:
+      test_length: 1024  
+      sample_num: 200
+
+  - task_path: "AP_STYLE_WRITING/2k"
+    args:
+      test_length: 2048
+      sample_num: 200
+
+  - task_path: "AP_STYLE_WRITING/4k"
+    args:
+      test_length: 4096
+      sample_num: 200
+
+  - task_path: "AP_STYLE_WRITING/8k"
+    args:
+      test_length: 8192
+      sample_num: 200
+
+  - task_path: "GEN_KV_DICT/1k"
+    args:
+      sample_num: 200
+      num_entries: 20
+
+  - task_path: "GEN_KV_DICT/2k"
+    args:
+      sample_num: 200
+      num_entries: 40
+
+  - task_path: "GEN_KV_DICT/4k"
+    args:
+      sample_num: 200
+      num_entries: 80
+
+  - task_path: "GEN_KV_DICT/8k"
+    args:
+      sample_num: 200
+      num_entries: 160
+
+  - task_path: "STATE_MACHINE/1k" 
+    args:
+      input_string_length: 55
+      sample_num: 200
+
+  - task_path: "STATE_MACHINE/2k"
+    args:
+      input_string_length: 110   
+      sample_num: 200
+
+  - task_path: "STATE_MACHINE/4k"
+    args:
+      input_string_length: 220
+      sample_num: 200
+
+  - task_path: "STATE_MACHINE/8k"
+    args:
+      input_string_length: 440
+      sample_num: 200
+
+  - task_path: "PARAGRAPH_ORDERING/1k"
+    args:
+      test_length: 1024
+      sample_num: 200
+
+  - task_path: "PARAGRAPH_ORDERING/2k"
+    args:
+      test_length: 2048
+      sample_num: 200
+
+  - task_path: "PARAGRAPH_ORDERING/4k"
+    args:
+      test_length: 4096
+      sample_num: 200
+      
+  - task_path: "PARAGRAPH_ORDERING/8k"
+    args:
+      test_length: 8192
+      sample_num: 200

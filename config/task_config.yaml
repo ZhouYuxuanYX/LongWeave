@@ -1,0 +1,103 @@
+task_config.yaml
+# tasks_config.yaml
+
+CODE_FIXING:
+  pep8_data_path_1k: ./data/code_fix/1k
+  pep8_data_path_2k: ./data/code_fix/2k
+  pep8_data_path_4k: ./data/code_fix/4k
+  pep8_data_path_8k: ./data/code_fix/8k
+  evaluation_model:
+    backend: "openai"
+    model: "gpt-4o-2024-11-20"
+    params:
+      temperature: 0.7
+      max_tokens: 8192
+      stream: True
+  # evaluation_model:
+  #   backend: "dlc" # or other backend/model suitable for evaluation tasks
+  #   model: "Qwen2___5-72B-Instruct"
+  #   params:
+  #     temperature: 0.1
+  #     top_p: 0.8
+  #     stream: False
+
+
+KG_TO_TEXT:
+    # Data file paths - Each suffix corresponds to a JSON file
+  kg2text_data_path_1k: ./data/kg2text/kg2text_categorized/1k # Assume file exists
+  kg2text_data_path_2k: ./data/kg2text/kg2text_categorized/2k # Assume file exists
+  kg2text_data_path_4k: ./data/kg2text/kg2text_categorized/4k # Files mentioned in your original request
+  kg2text_data_path_8k: ./data/kg2text/kg2text_categorized/8k # Assume file exists
+  evaluation_model:
+    # backend: "dlc" # or other backend/model suitable for evaluation tasks
+    # model: "Qwen2___5-72B-Instruct"
+    # params:
+    #   temperature: 0.1
+    #   top_p: 0.8
+    #   stream: False
+    backend: "openai"
+    model: "gpt-4o-2024-11-20"   # gpt-4o-2024-11-20, gpt-5-2025-08-07
+    params:
+      temperature: 0.7
+      max_tokens: 8192
+      stream: True
+    sentence_evaluation_batch_size: 5 # How many sentences to evaluate at once
+    evaluation_max_workers: 5         # Number of parallel evaluation threads
+    
+SALES_REPORT_GENERATION:
+  data_path_1k: ./data/excel2text/1k
+  data_path_2k: ./data/excel2text/2k
+  data_path_4k: ./data/excel2text/4k
+  data_path_8k: ./data/excel2text/8k
+  evaluation_model:
+    # backend: "dlc" # or other backend/model suitable for evaluation tasks
+    # model: "Qwen2___5-72B-Instruct"
+    # params:
+    #   temperature: 0.1
+    #   top_p: 0.8
+    #   stream: False
+    backend: "openai"
+    model: "gpt-4o-2024-11-20"
+    params:
+      temperature: 0.7
+      max_tokens: 8192
+      stream: True
+
+    conclusion_evaluation_batch_size: 5 # How many conclusions to check in one LLM call
+    evaluation_max_workers: 5           # Max threads for parallel batch evaluations
+
+AP_STYLE_WRITING:
+  rubric_path: "./rubric/AP_Style_Evaluation.json"
+  data_path: "./data/News_AP_Style/merged_output.json"
+  # evaluation_model:
+  #   backend: "dlc"
+  #   model: "Qwen2___5-72B-Instruct"
+  #   params:
+  #     temperature: 0.1
+  #     top_p: 0.8
+  #     stream: False
+  evaluation_model:
+    backend: "openai"
+    model: "gpt-4o-2024-11-20"
+    params:
+      temperature: 0.7
+      max_tokens: 8192
+      stream: True
+
+
+GEN_KV_DICT:
+  key_length: 32
+  value_length: 32
+
+STATE_MACHINE:
+  num_states: 3  # Number of states
+  initial_state: "S0"  # Initial state
+  input_size: 3  # Input alphabet size
+  output_size: 3  # Output alphabet size
+
+PARAGRAPH_ORDERING:
+  data_path: "./data/paragraph_ordering_data.json"
+
+KG2TEXT:
+  kg_path: "./data/kg_people.json"
+  num_entries: 100
